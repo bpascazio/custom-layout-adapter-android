@@ -26,6 +26,10 @@ public class CustomArrayAdapter extends ArrayAdapter<Post> {
 
         LayoutInflater inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View postView = inflater.inflate(R.layout.post_layout, parent, false);
+
+
+
+
         return postView;
 
     }
