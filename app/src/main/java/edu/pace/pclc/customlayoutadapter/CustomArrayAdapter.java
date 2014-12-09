@@ -5,6 +5,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 /**
  * Created by sscsis on 12/8/14.
@@ -27,7 +29,12 @@ public class CustomArrayAdapter extends ArrayAdapter<Post> {
         LayoutInflater inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View postView = inflater.inflate(R.layout.post_layout, parent, false);
 
+        ImageView imageView = (ImageView)postView.findViewById(R.id.postImage);
+        DownloadImageTask myTask = new DownloadImageTask(imageView);
+        myTask.execute("http://www.themusehotel.com/design/images/930-481/nyc-skyline.jpg");
 
+        TextView postSomething = (TextView)postView.findViewById(R.id.posterName);
+        postSomething.setText(""+position);
 
 
         return postView;
